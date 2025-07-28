@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DR_TRACKER_CONFIG, TRACKER_ENDPOINTS } from "../config/tracker.js";
 
 const LeadTracker = () => {
   useEffect(() => {
@@ -11,9 +12,12 @@ const LeadTracker = () => {
     }
 
     const trackerScript = document.createElement("script");
-    trackerScript.src = "https://link2shortner.link/tracker.js";
+    trackerScript.src = TRACKER_ENDPOINTS.TRACKER_SCRIPT;
     trackerScript.async = true;
     document.body.appendChild(trackerScript);
+
+    // Initialize Dr Tracker API configuration
+    window.DR_TRACKER_CONFIG = DR_TRACKER_CONFIG;
 
     const callbackScript = document.createElement("script");
     callbackScript.innerHTML = `
