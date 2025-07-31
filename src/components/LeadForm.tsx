@@ -375,7 +375,7 @@ const LeadForm = () => {
                   </div>
                 </div>
 
-                {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <Label
                       htmlFor="scamType"
@@ -426,9 +426,9 @@ const LeadForm = () => {
                       </p>
                     )}
                   </div>
-                </div> */}
+                </div>
 
-                {/* <div className="mt-4 sm:mt-6">
+                <div className="mt-4 sm:mt-6">
                   <Label
                     htmlFor="experience"
                     className="text-base font-semibold text-slate-700 mb-2 block"
@@ -450,7 +450,7 @@ const LeadForm = () => {
                       {errors.experience.message}
                     </p>
                   )}
-                </div> */}
+                </div>
               </div>
               {/* Submit Section */}
               <div className="text-center space-y-6">
