@@ -145,7 +145,7 @@ const LeadForm = () => {
     }
   };
 
-  console.log("TEST::", selectedCountry?.prefix || 1);
+  // Debug logging removed
 
   return (
     <section

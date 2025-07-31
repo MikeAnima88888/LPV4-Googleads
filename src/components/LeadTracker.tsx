@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { DR_TRACKER_CONFIG, TRACKER_ENDPOINTS } from "../config/tracker.js";
 
-const LeadTracker = () => {
+const LeadTracker: React.FC = () => {
   useEffect(() => {
-    if (!window.jQuery) {
+    if (!(window as any).jQuery) {
       const jqueryScript = document.createElement("script");
       jqueryScript.src =
         "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
@@ -17,7 +17,7 @@ const LeadTracker = () => {
     document.body.appendChild(trackerScript);
 
     // Initialize Dr Tracker API configuration
-    window.DR_TRACKER_CONFIG = DR_TRACKER_CONFIG;
+    (window as any).DR_TRACKER_CONFIG = DR_TRACKER_CONFIG;
 
     const callbackScript = document.createElement("script");
     callbackScript.innerHTML = `
@@ -46,8 +46,16 @@ const LeadTracker = () => {
     document.body.appendChild(callbackScript);
 
     return () => {
-      document.body.removeChild(trackerScript);
-      document.body.removeChild(callbackScript);
+      try {
+        if (trackerScript.parentNode) {
+          document.body.removeChild(trackerScript);
+        }
+        if (callbackScript.parentNode) {
+          document.body.removeChild(callbackScript);
+        }
+      } catch (error) {
+        console.warn("Error cleaning up tracker scripts:", error);
+      }
     };
   }, []);
 
