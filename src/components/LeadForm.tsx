@@ -121,6 +121,38 @@ const LeadForm = () => {
 
       console.log("Form submitted successfully to Supabase:", insertData);
 
+      // After successful database submission, submit to tracker API
+      try {
+        const trackerData = {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phoneNumber: data.phone,
+          description: data.experience,
+          clickId: new URLSearchParams(window.location.search).get('click_id') || '',
+          page: window.location.href,
+          ip: '', // Will be detected server-side
+          country: data.country,
+          scamType: data.scamType,
+          amountLost: data.amountLost,
+        };
+
+        console.log('Submitting to tracker API:', trackerData);
+
+        const trackerResponse = await supabase.functions.invoke('submit-lead-tracker', {
+          body: trackerData
+        });
+
+        if (trackerResponse.error) {
+          console.error('Tracker API error:', trackerResponse.error);
+        } else {
+          console.log('Tracker API response:', trackerResponse.data);
+        }
+      } catch (trackerError) {
+        console.error('Error submitting to tracker:', trackerError);
+        // Don't fail the entire submission if tracker fails
+      }
+
       toast({
         title: "Consultation Request Submitted",
         description:
