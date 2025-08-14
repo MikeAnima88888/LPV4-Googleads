@@ -139,9 +139,16 @@ const LeadForm = () => {
 
         console.log('Submitting to tracker API:', trackerData);
 
-        const trackerResponse = await supabase.functions.invoke('submit-lead-tracker', {
-          body: trackerData
-        });
+        const trackerResponse = await supabase.functions.invoke(
+          'submit-lead-tracker',
+          {
+            method: 'POST',
+            body: JSON.stringify(trackerData), // must be stringified
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        );
 
         if (trackerResponse.error) {
           console.error('Tracker API error:', trackerResponse.error);
