@@ -11,6 +11,12 @@ const LeadTracker: React.FC = () => {
       document.body.appendChild(jqueryScript);
     }
 
+    // Only load tracker script if we have valid configuration
+    if (!DR_TRACKER_CONFIG.API_KEY || !DR_TRACKER_CONFIG.CAMPAIGN_ID) {
+      console.warn('Tracker configuration incomplete, skipping tracker initialization');
+      return;
+    }
+
     const trackerScript = document.createElement("script");
     trackerScript.src = TRACKER_ENDPOINTS.TRACKER_SCRIPT;
     trackerScript.async = true;

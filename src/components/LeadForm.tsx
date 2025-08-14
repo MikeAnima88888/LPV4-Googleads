@@ -124,7 +124,7 @@ const LeadForm = () => {
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
-        phoneNumber: data.phone,
+        phoneNumber: `${selectedCountryData?.prefix || "+1"}${data.phone}`,
         description: data.experience,
         clickId: new URLSearchParams(window.location.search).get('click_id') || '',
         page: window.location.href,
