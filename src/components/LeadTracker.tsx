@@ -18,6 +18,27 @@ const LeadTracker: React.FC = () => {
 
     // Initialize Dr Tracker API configuration
     (window as any).DR_TRACKER_CONFIG = DR_TRACKER_CONFIG;
+    
+    // Add debugging for tracker initialization
+    console.log('Tracker config initialized:', DR_TRACKER_CONFIG);
+    
+    // Wait for tracker script to load before initializing
+    trackerScript.onload = () => {
+      console.log('Tracker script loaded successfully');
+      // Try to initialize tracker if available
+      if ((window as any).dr_init) {
+        try {
+          (window as any).dr_init();
+          console.log('Tracker initialized');
+        } catch (error) {
+          console.warn('Tracker initialization failed:', error);
+        }
+      }
+    };
+    
+    trackerScript.onerror = (error) => {
+      console.error('Failed to load tracker script:', error);
+    };
 
     const callbackScript = document.createElement("script");
     callbackScript.innerHTML = `
