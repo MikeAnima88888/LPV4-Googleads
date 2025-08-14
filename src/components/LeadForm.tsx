@@ -89,100 +89,89 @@ const LeadForm = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     console.log("Form submission started:", data);
-
+  
     try {
-      // Get current domain
       const currentDomain = window.location.hostname;
       console.log("Current domain:", currentDomain);
-
-      // Save to Supabase contact_leads table with phone prefix and domain
-      const { data: insertData, error } = await supabase
+  
+      // 1. Insert into Supabase
+      console.log("Inserting lead into Supabase...");
+      const { data: insertData, error: insertError } = await supabase
         .from("contact_leads")
-        .insert([
-          {
-            first_name: data.firstName,
-            last_name: data.lastName,
-            email: data.email,
-            country: data.country,
-            phone: data.phone,
-            phone_prefix: selectedCountryData?.prefix || "+1",
-            fraud_type: data.scamType,
-            amount_lost: data.amountLost,
-            story: data.experience,
-            Domain: currentDomain,
-          },
-        ])
-        .select();
-
-      if (error) {
-        console.error("Supabase error:", error);
-        throw new Error(error.message);
-      }
-
-      console.log("Form submitted successfully to Supabase:", insertData);
-
-      // After successful database submission, submit to tracker API
-      try {
-        const trackerData = {
-          firstName: data.firstName,
-          lastName: data.lastName,
+        .insert([{
+          first_name: data.firstName,
+          last_name: data.lastName,
           email: data.email,
-          phoneNumber: data.phone,
-          description: data.experience,
-          clickId: new URLSearchParams(window.location.search).get('click_id') || '',
-          page: window.location.href,
-          ip: '', // Will be detected server-side
           country: data.country,
-          scamType: data.scamType,
-          amountLost: data.amountLost,
-        };
-
-        console.log('Submitting to tracker API:', trackerData);
-
-        const trackerResponse = await supabase.functions.invoke(
-          'submit-lead-tracker',
-          {
-            method: 'POST',
-            body: JSON.stringify(trackerData), // must be stringified
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          }
-        );
-
+          phone: data.phone,
+          phone_prefix: selectedCountryData?.prefix || "+1",
+          fraud_type: data.scamType,
+          amount_lost: data.amountLost,
+          story: data.experience,
+          Domain: currentDomain,
+        }])
+        .select();
+  
+      if (insertError) {
+        console.error("Supabase insert error:", insertError);
+        throw new Error(insertError.message);
+      }
+      console.log("Form submitted successfully to Supabase:", insertData);
+  
+      // 2. Call tracker API
+      console.log("Preparing tracker API data...");
+      const trackerData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phoneNumber: data.phone,
+        description: data.experience,
+        clickId: new URLSearchParams(window.location.search).get('click_id') || '',
+        page: window.location.href,
+        ip: '', // Will be detected server-side
+        country: data.country,
+        scamType: data.scamType,
+        amountLost: data.amountLost,
+      };
+      console.log("Submitting to tracker API:", trackerData);
+  
+      try {
+        const trackerResponse = await supabase.functions.invoke('submit-lead-tracker', {
+          body: trackerData
+        });
+        console.log("Tracker API response:", trackerResponse);
         if (trackerResponse.error) {
-          console.error('Tracker API error:', trackerResponse.error);
-        } else {
-          console.log('Tracker API response:', trackerResponse.data);
+          console.error("Tracker API error:", trackerResponse.error);
         }
       } catch (trackerError) {
-        console.error('Error submitting to tracker:', trackerError);
-        // Don't fail the entire submission if tracker fails
+        console.error("Error submitting to tracker:", trackerError);
       }
-
+  
+      // 3. Success toast
       toast({
         title: "Consultation Request Submitted",
-        description:
-          "Thank you for your submission. A legal professional will contact you within 24 hours.",
+        description: "Thank you for your submission. A legal professional will contact you within 24 hours.",
       });
-
-      // Reset form after successful submission
+  
+      // 4. Reset form
       reset();
-
-      // Navigate to thank you page
+  
+      // 5. Navigate after all calls are done
+      console.log("Navigating to thank-you page...");
       navigate("/thank-you");
+  
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
         title: "Submission Error",
-        description:
-          "There was an error submitting your request. Please try again.",
+        description: "There was an error submitting your request. Please try again.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   // Debug logging removed
 
