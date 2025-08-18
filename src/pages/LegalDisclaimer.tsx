@@ -45,7 +45,8 @@ const LegalDisclaimer = () => {
 
             <section>
               <h2 className="text-2xl font-semibold mb-3">Advertising Material</h2>
-              <p>This website may be considered advertising material under professional conduct rules. The choice of an attorney is an important decision.</p>
+              <p className="mb-4">This website may be considered advertising material under professional conduct rules. The choice of an attorney is an important decision.</p>
+              <p className="text-sm text-gray-700">We follow the advertising requirements of major platforms including Meta, Google Ads, and TikTok. Prior results do not guarantee a similar outcome. We do not make exaggerated or misleading claims, and any use of pixels or cookies for advertising is disclosed in our Privacy and Cookie Policies with opt-out mechanisms.</p>
             </section>
 
             <section>

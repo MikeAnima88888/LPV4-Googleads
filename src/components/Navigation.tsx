@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Shield, Phone, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -15,7 +16,8 @@ const Navigation = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl shadow-xl border-b border-slate-200/80 transition-all duration-300">
+    <>
+    <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl shadow-xl border-b border-slate-200/80 transition-all duration-300 group">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex items-center justify-between h-16 sm:h-16 lg:h-20">
           {/* Logo */}
@@ -70,6 +72,20 @@ const Navigation = () => {
           </div>
         </div>
 
+        {/* Toolbar navigation (desktop, reveal on hover/focus) */}
+        <nav
+          role="navigation"
+          aria-label="Secondary"
+          className="hidden md:flex items-center gap-6 py-2 border-t border-slate-200/80 transition-all duration-300 opacity-0 max-h-0 overflow-hidden pointer-events-none group-hover:opacity-100 group-hover:max-h-16 group-hover:pointer-events-auto focus-within:opacity-100 focus-within:max-h-16"
+        >
+          <Link to="/" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Home</Link>
+          <Link to="/contact" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Contact</Link>
+          <Link to="/about" className="text-slate-700 hover:text-slate-900 text-sm font-medium">About</Link>
+          <Link to="/privacy-policy" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Privacy</Link>
+          <Link to="/terms-of-service" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Terms</Link>
+          <Link to="/legal-disclaimer" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Disclaimer</Link>
+        </nav>
+
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl">
@@ -84,6 +100,15 @@ const Navigation = () => {
               >
                 Get Free Legal Consultation
               </Button>
+              {/* Mobile toolbar links */}
+              <div className="grid grid-cols-2 gap-2 px-3">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">Home</Link>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">Contact</Link>
+                <Link to="/privacy-policy" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">Privacy</Link>
+                <Link to="/terms-of-service" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">Terms</Link>
+                <Link to="/legal-disclaimer" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">Disclaimer</Link>
+                <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 text-sm font-medium py-2">About</Link>
+              </div>
               <div className="flex flex-wrap gap-2 px-3">
                 <span className="px-3 py-1.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
                   Licensed Legal Services
@@ -97,6 +122,9 @@ const Navigation = () => {
         )}
       </div>
     </header>
+    {/* Layout spacer to prevent content being covered by fixed header + toolbar */}
+    <div aria-hidden className="h-16 md:h-24 lg:h-28" />
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 
 import { Shield, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -31,10 +32,27 @@ const Footer = () => {
                 <Phone className="h-5 w-5 text-white" />
                 <span className="text-white font-semibold">Free Legal Consultation</span>
               </div>
-              <p className="text-emerald-100 text-sm">
-                Speak with a licensed attorney about your case
-              </p>
+              <p className="text-emerald-100 text-sm mb-2">Speak with a licensed attorney about your case</p>
+              <ul className="text-white/90 text-sm space-y-1">
+                <li>Canada: <a href="tel:+16476015502" className="hover:underline underline-offset-2">+1 (647)-601-5502</a></li>
+                <li>United Kingdom: <a href="tel:+442037696468" className="hover:underline underline-offset-2">+44 (203)-769-6468</a></li>
+                <li>Sweden: <a href="tel:+46406829478" className="hover:underline underline-offset-2">+46 (406)-829-478</a></li>
+                <li>Australia: <a href="tel:+61289070307" className="hover:underline underline-offset-2">+61 (289)-070-307</a></li>
+              </ul>
             </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="mb-12">
+            <nav className="flex flex-wrap gap-4 text-slate-300 text-sm">
+              <Link to="/contact" className="hover:text-white underline-offset-4 hover:underline">Contact</Link>
+              <Link to="/about" className="hover:text-white underline-offset-4 hover:underline">About</Link>
+              <Link to="/privacy-policy" className="hover:text-white underline-offset-4 hover:underline">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white underline-offset-4 hover:underline">Terms of Service</Link>
+              <Link to="/cookie-policy" className="hover:text-white underline-offset-4 hover:underline">Cookie Policy</Link>
+              <Link to="/legal-disclaimer" className="hover:text-white underline-offset-4 hover:underline">Legal Disclaimer</Link>
+              <Link to="/accessibility" className="hover:text-white underline-offset-4 hover:underline">Accessibility</Link>
+            </nav>
           </div>
 
           {/* Legal Disclaimers */}

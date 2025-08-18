@@ -52,9 +52,10 @@ const CookiePolicy = () => {
               <h2 className="text-2xl font-semibold mb-3">Third-Party Cookies</h2>
               <p className="mb-4">We use third-party services that may place cookies on your device:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Google Analytics</li>
-                <li>Facebook Pixel</li>
-                <li>Other marketing platforms</li>
+                <li>Meta (Facebook/Instagram) Pixel</li>
+                <li>Google Ads & Google Analytics</li>
+                <li>TikTok Pixel / SDK (where applicable)</li>
+                <li>Other marketing and analytics platforms</li>
               </ul>
             </section>
 
@@ -66,7 +67,19 @@ const CookiePolicy = () => {
                 <li>Delete existing cookies</li>
                 <li>Privacy tools</li>
                 <li>Opt-out industry tools</li>
+                <li>Meta: facebook.com/ads/preferences</li>
+                <li>Google: adssettings.google.com</li>
+                <li>TikTok: support.tiktok.com → Personalized ads</li>
               </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">Consent</h2>
+              <p>
+                Where required by law (e.g., EEA/UK), we request your consent before using non-essential
+                cookies/pixels. You can withdraw consent at any time by adjusting your browser or device
+                settings and using the tools above.
+              </p>
             </section>
 
             <section>

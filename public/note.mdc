@@ -1,0 +1,71 @@
+1. Contact page with company contact information is required.
+2. About Us page with general information abut the company, it's goals is required.
+3. Terms of Use and Privacy Policy pages are a must as well.
+4. All the links on the site must lead to valid pages.
+5. Age Restriction & Compliance Notice
+- Mark the service as only for users 18+.
+- Display compliance with legal advertising regulations for the target market
+6. Avoid Exaggerated Claims
+- Remove any absolute promises like “You will recover all funds.
+- Use careful wording: “We may help assess your legal options
+
+---
+Status review (what works vs what not) + approach
+
+1) Contact Page
+- Working: None. No dedicated `Contact` page or route exists.
+- Not working: Missing `Contact` page, route, and visible links in UI.
+- Way to do it: Create `src/pages/Contact.tsx`, add route `/contact` in `src/App.tsx`, include email/phone/address and a simple form, then add links in `Footer` (and optional `Navigation`).
+
+2) About Us Page
+- Working: None. No `About` page or route exists.
+- Not working: Missing `About` page and links.
+- Way to do it: Create `src/pages/About.tsx`, add route `/about`, link it in `Footer` and/or `Navigation`.
+
+3) Terms of Use + Privacy Policy
+- Working: `src/pages/TermsOfService.tsx` and `src/pages/PrivacyPolicy.tsx` exist and are routed at `/terms-of-service` and `/privacy-policy`.
+- Not working: No visible footer/nav links to these pages yet.
+- Way to do it: Add links in `Footer` to `/privacy-policy`, `/terms-of-service`, `/cookie-policy`, `/legal-disclaimer`, `/accessibility`.
+
+4) All links lead to valid pages
+- Working: Current in-app links (Back to Home, Thank You, 404) resolve correctly; 404 route exists.
+- Not working: Risk of new broken links once adding Contact/About if routes aren’t wired.
+- Way to do it: After adding Contact/About pages, verify links and ensure each link targets an existing `Route` in `App`.
+
+5) Age Restriction & Compliance Notice (18+)
+- Working: Privacy Policy states services are not for under 18; disclaimers cover attorney advertising and no guarantees.
+- Not working: No prominent 18+ notice in header/footer; compliance messaging not clearly surfaced site-wide.
+- Way to do it: Update `DisclaimerBar` or `Footer` with an "18+ Only" note and a brief advertising compliance statement.
+
+6) Avoid Exaggerated Claims
+- Working: No explicit "guarantee/100%/will recover" wording; Footer and Legal Disclaimer clearly state no guarantees.
+- Not working: Hero headline "Get Your Money Back !" reads as absolute; claim of "over $211 million" lacks nearby qualifier.
+- Way to do it: Reword hero to cautious language (e.g., "Explore Legal Options to Recover Funds"), replace absolutes with "may/can help"; keep figures only with clear qualifiers and add "Prior results do not guarantee similar outcomes." nearby.
+
+Next steps to implement (in order):
+- Add `Contact` + `About` pages and routes; link them in `Footer`.
+- Add footer links to legal pages; verify all links.
+- Add 18+ notice to `DisclaimerBar` or `Footer`.
+- Tone down hero and any absolute claims.
+
+Task 1 implementation status:
+- Created `src/pages/Contact.tsx` with email/phone/address and notices
+- Added route `/contact` in `src/App.tsx`
+- Added `Contact` link to `src/components/Footer.tsx`
+- Next: verify link works in build and adjust content as needed
+
+Toolbar navigation update:
+- Added a desktop toolbar with links (Home, Contact, Privacy, Terms, Disclaimer) under the logo in `src/components/Navigation.tsx`
+- Added equivalent links to the mobile menu
+- This helps users navigate to Contact and legal pages easily
+
+Task 2 implementation status:
+- Created `src/pages/About.tsx` with mission, who we are, process, standards, and contact link
+- Added route `/about` in `src/App.tsx`
+- Added `About` link to `src/components/Footer.tsx` and toolbar/menu in `src/components/Navigation.tsx`
+- Next: verify navigation, refine copy if needed
+
+Task 3 implementation status:
+- Footer now includes links to: Privacy Policy, Terms of Service, Cookie Policy, Legal Disclaimer, Accessibility
+- All routes already exist in `src/App.tsx`
+- Verified internal navigation structure; next: quick manual click-through to confirm no 404s

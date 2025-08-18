@@ -12,6 +12,8 @@ import TermsOfService from "./pages/TermsOfService";
 import LegalDisclaimer from "./pages/LegalDisclaimer";
 import CookiePolicy from "./pages/CookiePolicy";
 import AccessibilityStatement from "./pages/AccessibilityStatement";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/legal-disclaimer" element={<LegalDisclaimer />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/accessibility" element={<AccessibilityStatement />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -145,6 +145,41 @@ const PrivacyPolicy = () => {
                 <li>Google Ad Settings: <a href="https://adssettings.google.com" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">adssettings.google.com</a></li>
                 <li>Digital Advertising Alliance opt-out: <a href="http://optout.aboutads.info" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a></li>
               </ul>
+              <p className="mb-4">TikTok Ads personalisation controls: <a href="https://support.tiktok.com/en/account-and-privacy/personalized-ads-and-data/personalized-ads" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">TikTok Ads Preferences</a></p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">Advertising & Pixels (Meta, Google Ads, TikTok)</h2>
+              <p className="mb-4">We work with advertising partners including Meta (Facebook/Instagram), Google Ads, and TikTok. These partners may use cookies, pixels, SDKs, or similar technologies to measure campaign performance and deliver relevant advertisements.</p>
+              <h3 className="text-xl font-medium mb-3">What Data May Be Collected</h3>
+              <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+                <li>Device and browser information, IP address, timestamp</li>
+                <li>Pages visited, events (e.g., form submission), referral URLs</li>
+                <li>Ad interactions, campaign parameters (e.g., UTM), hashed identifiers where applicable</li>
+              </ul>
+              <h3 className="text-xl font-medium mb-3">Purposes</h3>
+              <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+                <li>Measure ad performance and conversions</li>
+                <li>Prevent fraud and improve ad delivery</li>
+                <li>Deliver and limit personalized ads subject to your preferences</li>
+              </ul>
+              <h3 className="text-xl font-medium mb-3">Legal Basis</h3>
+              <p className="mb-4">Where required (e.g., EEA/UK), we rely on your consent for marketing/advertising cookies and pixels. In other regions, we may rely on legitimate interests for measurement and security, where permitted by law. You can withdraw consent or adjust preferences at any time via your browser settings and our cookie controls.</p>
+              <h3 className="text-xl font-medium mb-3">Opt-Out & Controls</h3>
+              <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+                <li>Facebook: <a href="https://www.facebook.com/ads/preferences" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">facebook.com/ads/preferences</a></li>
+                <li>Google: <a href="https://adssettings.google.com" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">adssettings.google.com</a></li>
+                <li>TikTok: <a href="https://support.tiktok.com/en/account-and-privacy/personalized-ads-and-data/personalized-ads" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">TikTok Ads Preferences</a></li>
+                <li>DAA/NAI tools: <a href="http://optout.aboutads.info" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">optout.aboutads.info</a>, <a href="https://optout.networkadvertising.org/" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">optout.networkadvertising.org</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">Regional Disclosures</h2>
+              <h3 className="text-xl font-medium mb-3">EEA/UK</h3>
+              <p className="mb-4">If you are located in the EEA/UK, we will request your consent before placing non-essential cookies or pixels. You can change your preferences at any time using your browser settings and available cookie controls. We respect applicable data subject rights under GDPR/UK GDPR.</p>
+              <h3 className="text-xl font-medium mb-3">California (CCPA/CPRA)</h3>
+              <p className="mb-4">We do not sell personal information for money. Some sharing for cross-context behavioral advertising may be considered a “sale” or “share” under California law. You can opt out of such sharing via your cookie settings and the advertising links above.</p>
             </section>
 
             <section>

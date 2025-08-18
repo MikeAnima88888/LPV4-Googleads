@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import LeadForm from '@/components/LeadForm';
@@ -11,11 +12,24 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Immediate render
     setIsLoaded(true);
   }, []);
+
+  // Scroll to anchor (e.g., /#consultation-form) when coming from other pages
+  useEffect(() => {
+    if (!isLoaded) return;
+    const hash = location.hash?.replace('#', '');
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash, isLoaded]);
 
   return (
     <div className={`font-inter transition-opacity duration-200 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
