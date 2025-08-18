@@ -22,28 +22,39 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 sm:h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
-            <div className="relative flex-shrink-0">
-              <div className="w-10 h-10 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Shield className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
+            <Link to="/" aria-label="Go to home" className="flex items-center space-x-2 sm:space-x-3">
+              <div className="relative flex-shrink-0">
+                <div className="w-10 h-10 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Shield className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
+                </div>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full flex items-center justify-center">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center space-x-1">
+                  <span className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 truncate">CLEARCHAIN</span>
+                  <span className="text-lg sm:text-xl lg:text-2xl font-light text-emerald-600 hidden xs:inline">Recovery</span>
+                </div>
+                <div className="hidden sm:flex space-x-2 mt-1">
+                  <span className="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full whitespace-nowrap">
+                    Licensed Legal Services
+                  </span>
+                  <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-medium rounded-full whitespace-nowrap">
+                    Consumer Protection
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col min-w-0">
-              <div className="flex items-center space-x-1">
-                <span className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 truncate">CLEARCHAIN</span>
-                <span className="text-lg sm:text-xl lg:text-2xl font-light text-emerald-600 hidden xs:inline">Recovery</span>
-              </div>
-              <div className="hidden sm:flex space-x-2 mt-1">
-                <span className="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full whitespace-nowrap">
-                  Licensed Legal Services
-                </span>
-                <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-medium rounded-full whitespace-nowrap">
-                  Consumer Protection
-                </span>
-              </div>
-            </div>
+            </Link>
+            {/* Inline toolbar navigation (desktop) */}
+            <nav className="hidden md:flex items-center gap-6 ml-6">
+              <Link to="/" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Home</Link>
+              <Link to="/contact" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Contact</Link>
+              <Link to="/about" className="text-slate-700 hover:text-slate-900 text-sm font-medium">About</Link>
+              <Link to="/privacy-policy" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Privacy</Link>
+              <Link to="/terms-of-service" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Terms</Link>
+              <Link to="/legal-disclaimer" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Disclaimer</Link>
+            </nav>
           </div>
 
           {/* Desktop Right side */}
@@ -72,19 +83,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Toolbar navigation (desktop, reveal on hover/focus) */}
-        <nav
-          role="navigation"
-          aria-label="Secondary"
-          className="hidden md:flex items-center gap-6 py-2 border-t border-slate-200/80 transition-all duration-300 opacity-0 max-h-0 overflow-hidden pointer-events-none group-hover:opacity-100 group-hover:max-h-16 group-hover:pointer-events-auto focus-within:opacity-100 focus-within:max-h-16"
-        >
-          <Link to="/" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Home</Link>
-          <Link to="/contact" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Contact</Link>
-          <Link to="/about" className="text-slate-700 hover:text-slate-900 text-sm font-medium">About</Link>
-          <Link to="/privacy-policy" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Privacy</Link>
-          <Link to="/terms-of-service" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Terms</Link>
-          <Link to="/legal-disclaimer" className="text-slate-700 hover:text-slate-900 text-sm font-medium">Disclaimer</Link>
-        </nav>
+        {/* Inline toolbar handled next to logo on desktop */}
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
@@ -122,8 +121,6 @@ const Navigation = () => {
         )}
       </div>
     </header>
-    {/* Layout spacer to prevent content being covered by fixed header + toolbar */}
-    <div aria-hidden className="h-16 md:h-24 lg:h-28" />
     </>
   );
 };

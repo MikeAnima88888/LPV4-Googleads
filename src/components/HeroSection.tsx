@@ -186,9 +186,43 @@ const HeroSection = () => {
         {/* Free Consultation Callout */}
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+        <h1 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-10">
           <span className="block">Victim of Online Fraud?</span>
-          <span className="block text-emerald-400 mt-1">Get Your Money Back !</span>
+          <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
+            Get Help Today
+            {/* Handwritten-style underline: tapered brush with angled tail */}
+            <svg
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-6 h-10 sm:h-12 w-[144%] sm:w-[138%]"
+              viewBox="0 0 100 24"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <filter id="hero-underline-softglow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" />
+                </filter>
+                {/* Reveal mask that animates from left to right */}
+                <mask id="hero-underline-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="24">
+                  <rect x="-6" y="0" height="24" width="0" fill="#ffffff" rx="6" ry="6">
+                    <animate attributeName="width" from="0" to="112" dur="0.35s" fill="freeze" />
+                  </rect>
+                </mask>
+              </defs>
+              <g mask="url(#hero-underline-mask)" transform="translate(0,-1) scale(1,0.96)">
+                {/* Soft glow */}
+                <path
+                  d="M2,16 L6,14.6 C22,13.2 44,12.4 70,12.2 C82,12.1 90,12.5 94,13.1 L98,16.2 L92,16 C70,17.8 38,19.8 12,19 L4,17.4 Z"
+                  fill="rgba(255,255,255,0.22)"
+                  filter="url(#hero-underline-softglow)"
+                />
+                {/* Main filled brush with tapered start and angled tail */}
+                <path
+                  d="M2,16 L6,14.6 C22,13.2 44,12.4 70,12.2 C82,12.1 90,12.5 94,13.1 L98,16.2 L92,16 C70,17.8 38,19.8 12,19 L4,17.4 Z"
+                  fill="white"
+                />
+              </g>
+            </svg>
+          </span>
         </h1>
 
         {/* Optimized Video Section with Auto-play */}
@@ -289,13 +323,12 @@ const HeroSection = () => {
             <p className="text-lg text-slate-100 leading-relaxed">
               <span className="text-white font-bold text-xl block mb-2">Elite Legal Defense Against Financial Predators</span>
               <span className="block mb-2 text-slate-200">
-                Our specialized legal team has successfully recovered 
-                <span className="text-emerald-400 font-bold mx-1">over $211 million</span> 
-                from fraud operations worldwide.
+                Our specialized legal team supports victims in evaluating and pursuing potential recovery strategies in complex, cross‑border fraud matters.
               </span>
               <span className="block text-amber-300 font-semibold">
                 <span className="text-red-400 font-bold">Time is critical</span>
               </span>
+              <span className="block mt-2 text-xs text-slate-400">Prior results do not guarantee a similar outcome.</span>
             </p>
           </div>
         </div>

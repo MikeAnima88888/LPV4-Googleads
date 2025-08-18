@@ -213,6 +213,11 @@ const LeadForm = () => {
                 Speak with a licensed attorney about your legal options.
                 Completely confidential.
               </p>
+              <div className="mt-3 flex justify-center">
+                <span className="px-2.5 py-1 bg-slate-900/5 text-slate-700 text-xs font-semibold rounded-full border border-slate-200">
+                  18+ Only
+                </span>
+              </div>
             </div>
             <LeadTracker />
             <form

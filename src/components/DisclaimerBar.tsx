@@ -12,7 +12,7 @@ const DisclaimerBar = () => {
       <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-2">
         <div className="flex items-center justify-between gap-3">
           <p className="text-white text-xs sm:text-sm font-medium text-center flex-1 leading-relaxed">
-            Attorney Advertising • Free Consultation Available • No Attorney-Client Relationship Until Retained
+            Attorney Advertising • 18+ Only • No Attorney-Client Relationship Until Retained • Compliant with applicable advertising regulations
           </p>
           <button
             onClick={() => setIsVisible(false)}

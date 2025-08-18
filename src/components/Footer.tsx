@@ -91,6 +91,9 @@ const Footer = () => {
                     Each case is evaluated on its individual merits. Legal representation 
                     may not be appropriate for all situations.
                   </p>
+                  <p className="mt-3 text-slate-400 text-xs">
+                    Services are intended for adults (18+) only. We follow applicable legal advertising regulations.
+                  </p>
                 </div>
               </div>
             </div>

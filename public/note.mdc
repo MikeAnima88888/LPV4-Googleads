@@ -69,3 +69,17 @@ Task 3 implementation status:
 - Footer now includes links to: Privacy Policy, Terms of Service, Cookie Policy, Legal Disclaimer, Accessibility
 - All routes already exist in `src/App.tsx`
 - Verified internal navigation structure; next: quick manual click-through to confirm no 404s
+
+Task 5 implementation status (Age Restriction & Compliance Notice):
+- Added "18+ Only" and compliance line to `src/components/DisclaimerBar.tsx`
+- Added 18+ note and compliance sentence under Consultation Disclaimer in `src/components/Footer.tsx`
+- Privacy Policy already states services not intended for under 18
+- Next: optional badge near CTAs if you want it more prominent
+
+Task 5 addendum:
+- Added subtle "18+ Only" badge below hero CTAs and appended to Final CTA footer line for consistent visibility.
+
+Task 6 implementation status (Avoid Exaggerated Claims):
+- Reworded hero subheadline to "Explore Your Legal Options to Recover Funds"
+- Removed results-forward dollar figure; added qualifier "Prior results do not guarantee a similar outcome."
+- Kept disclaimers in footer and Legal Disclaimer page aligned
