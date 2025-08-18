@@ -18,6 +18,22 @@ const TermsOfService = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <section>
+              <h2 className="text-2xl font-semibold mb-3">Legal Disclaimer (Summary)</h2>
+              <p className="mb-3">
+                The following disclaimer forms part of these Terms of Service. It summarizes key
+                points from our full <Link to="/legal-disclaimer" className="text-blue-600 underline">Legal Disclaimer</Link>.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4 text-gray-800">
+                <li><strong>Attorney Advertising:</strong> This website may be considered attorney advertising. Prior results do not guarantee a similar outcome.</li>
+                <li><strong>No Attorney-Client Relationship:</strong> Using this website or contacting us does not create an attorney-client relationship. A formal retainer is required.</li>
+                <li><strong>Not Legal Advice:</strong> The information provided is for general informational purposes only and is not legal advice.</li>
+                <li><strong>No Guarantees:</strong> We cannot guarantee results. Each case depends on its unique facts and applicable law.</li>
+                <li><strong>Confidentiality:</strong> Do not send confidential information until a formal relationship is established.</li>
+                <li><strong>Jurisdiction & Licensing:</strong> Attorneys are licensed in specific jurisdictions; services may not be available in all locations.</li>
+                <li><strong>Time Sensitivity:</strong> Legal claims are subject to deadlines; seek legal advice promptly to preserve rights.</li>
+              </ul>
+            </section>
+            <section>
               <h2 className="text-2xl font-semibold mb-3">Acceptance of Terms</h2>
               <p>By using this website, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
             </section>
@@ -67,6 +83,7 @@ const TermsOfService = () => {
                 <li>Phone: (555) 123-4567</li>
               </ul>
             </section>
+
 
             <p className="text-center text-gray-600">
               Last updated: {new Date().toLocaleDateString()}
