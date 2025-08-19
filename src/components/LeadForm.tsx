@@ -25,6 +25,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import LeadTracker from "./LeadTracker";
+import { DR_TRACKER_CONFIG } from "@/config/tracker.js";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -225,24 +226,23 @@ const LeadForm = () => {
               className="space-y-8 sm:space-y-12 dr-form"
             >
               <input
-  type="hidden"
-  className="dr-field-suid"
-  id="dr-field-suid"
-  value={import.meta.env.VITE_DR_API_KEY}
-/>
+                type="hidden"
+                className="dr-field-suid"
+                id="dr-field-suid"
+                value={DR_TRACKER_CONFIG.API_KEY}
+              />
               <input
                 type="hidden"
                 className="dr-field-clickid"
                 id="dr-field-clickid"
-                value={"YourClickID"}
+                value={new URLSearchParams(window.location.search).get('click_id') || 'YourClickID'}
               />
-              
               <input
-  type="hidden"
-  className="dr-campaign-id"
-  id="dr-campaign-id"
-  value={import.meta.env.VITE_CAMPAIGN_ID}
-/>
+                type="hidden"
+                className="dr-campaign-id"
+                id="dr-campaign-id"
+                value={DR_TRACKER_CONFIG.CAMPAIGN_ID}
+              />
 
 
               {/* Personal Information Section */}
