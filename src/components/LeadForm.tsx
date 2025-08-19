@@ -24,7 +24,6 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
-import LeadTracker from "./LeadTracker";
 import { DR_TRACKER_CONFIG } from "@/config/tracker.js";
 
 const formSchema = z.object({
@@ -220,7 +219,6 @@ const LeadForm = () => {
                 </span>
               </div>
             </div>
-            <LeadTracker />
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-8 sm:space-y-12 dr-form"
