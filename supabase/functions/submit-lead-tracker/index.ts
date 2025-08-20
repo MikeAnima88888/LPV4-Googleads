@@ -5,7 +5,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// API Configuration - these would be stored as secrets in production
 const API_CONFIG = {
   API_KEY: 'TVRRMk1UbGZPREkxWHpFME5qRTVYdz09',
   API_PASSWORD: 'KQb05g4Vvi',
@@ -18,6 +17,7 @@ interface LeadData {
   lastName: string;
   email: string;
   phoneNumber: string;
+  phonePrefix?: string;   // <-- added
   description: string;
   clickId?: string;
   page?: string;
@@ -27,8 +27,19 @@ interface LeadData {
   amountLost?: string;
 }
 
+function normalizePhone(phone: string, prefix: string = ''): string {
+  if (!phone) return '';
+  let clean = phone.replace(/[\s\-()]/g, '');
+  if (clean.startsWith('+')) return clean;
+  if (clean.startsWith('00')) return '+' + clean.slice(2);
+  if (prefix) {
+    if (clean.startsWith('0')) clean = clean.slice(1);
+    return `${prefix}${clean}`;
+  }
+  return clean;
+}
+
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -38,12 +49,9 @@ serve(async (req) => {
     
     const leadData: LeadData = await req.json();
     console.log('Lead data received:', leadData);
-    const formattedPhoneNumber = ${leadData.phonePrefix}${leadData.phoneNumber};
-    // Get country code prefix and format phone number
-    //const countryCode = leadData.country ? COUNTRY_CODES[leadData.country] : '';
-    //const formattedPhoneNumber = countryCode ? `${countryCode}${leadData.phoneNumber}` : leadData.phoneNumber;
 
-    // Prepare form data for the tracker API
+    const formattedPhoneNumber = normalizePhone(leadData.phoneNumber, leadData.phonePrefix);
+
     const formData = new URLSearchParams({
       ApiKey: API_CONFIG.API_KEY,
       ApiPassword: API_CONFIG.API_PASSWORD,
@@ -59,8 +67,8 @@ serve(async (req) => {
       Page: leadData.page || '',
       IP: leadData.ip || '',
       SubSource: '',
-      P1: leadData.scamType || '', // Map scam type to P1
-      P2: leadData.amountLost || '', // Map amount lost to P2
+      P1: leadData.scamType || '',
+      P2: leadData.amountLost || '',
       P3: '',
       P4: '',
       P5: ''
@@ -68,12 +76,9 @@ serve(async (req) => {
 
     console.log('Submitting to tracker API with data:', Object.fromEntries(formData));
 
-    // Make the API call to the tracker
     const trackerResponse = await fetch('https://tracker.soulortrack.com/repost.php?act=register', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: formData.toString(),
     });
 
@@ -81,33 +86,22 @@ serve(async (req) => {
     console.log('Tracker API response status:', trackerResponse.status);
     console.log('Tracker API response:', responseText);
 
-    if (!trackerResponse.ok) {
-      throw new Error(`Tracker API returned status ${trackerResponse.status}: ${responseText}`);
-    }
-
     return new Response(
       JSON.stringify({ 
         success: true, 
         trackerResponse: responseText,
         status: trackerResponse.status,
-        submission:formData
+        submission: Object.fromEntries(formData),
+        formattedPhone: formattedPhoneNumber
       }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
   } catch (error) {
     console.error('Error in submit-lead-tracker function:', error);
     return new Response(
-      JSON.stringify({ 
-        error: error.message,
-        success: false 
-      }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
+      JSON.stringify({ error: error.message, success: false }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
 });
