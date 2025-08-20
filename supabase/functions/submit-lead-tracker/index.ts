@@ -27,6 +27,84 @@ interface LeadData {
   amountLost?: string;
 }
 
+// Country code mapping
+const COUNTRY_CODES: { [key: string]: string } = {
+  "United States": "+1",
+  "Canada": "+1", 
+  "United Kingdom": "+44",
+  "Australia": "+61",
+  "New Zealand": "+64",
+  "Germany": "+49",
+  "France": "+33",
+  "Spain": "+34",
+  "Italy": "+39",
+  "Netherlands": "+31",
+  "Belgium": "+32",
+  "Switzerland": "+41",
+  "Austria": "+43",
+  "Sweden": "+46",
+  "Norway": "+47",
+  "Denmark": "+45",
+  "Finland": "+358",
+  "Ireland": "+353",
+  "Portugal": "+351",
+  "Greece": "+30",
+  "Poland": "+48",
+  "Czech Republic": "+420",
+  "Hungary": "+36",
+  "Romania": "+40",
+  "Bulgaria": "+359",
+  "Croatia": "+385",
+  "Slovenia": "+386",
+  "Slovakia": "+421",
+  "Lithuania": "+370",
+  "Latvia": "+371",
+  "Estonia": "+372",
+  "Malta": "+356",
+  "Cyprus": "+357",
+  "Luxembourg": "+352",
+  "Iceland": "+354",
+  "Brazil": "+55",
+  "Mexico": "+52",
+  "Argentina": "+54",
+  "Chile": "+56",
+  "Colombia": "+57",
+  "Peru": "+51",
+  "Venezuela": "+58",
+  "Uruguay": "+598",
+  "Paraguay": "+595",
+  "Bolivia": "+591",
+  "Ecuador": "+593",
+  "Japan": "+81",
+  "South Korea": "+82",
+  "China": "+86",
+  "India": "+91",
+  "Singapore": "+65",
+  "Hong Kong": "+852",
+  "Taiwan": "+886",
+  "Thailand": "+66",
+  "Malaysia": "+60",
+  "Philippines": "+63",
+  "Indonesia": "+62",
+  "Vietnam": "+84",
+  "Israel": "+972",
+  "United Arab Emirates": "+971",
+  "Saudi Arabia": "+966",
+  "South Africa": "+27",
+  "Egypt": "+20",
+  "Nigeria": "+234",
+  "Kenya": "+254",
+  "Ghana": "+233",
+  "Morocco": "+212",
+  "Tunisia": "+216",
+  "Algeria": "+213",
+  "Turkey": "+90",
+  "Russia": "+7",
+  "Ukraine": "+380",
+  "Belarus": "+375",
+  "Kazakhstan": "+7",
+};
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -39,6 +117,10 @@ serve(async (req) => {
     const leadData: LeadData = await req.json();
     console.log('Lead data received:', leadData);
 
+    // Get country code prefix and format phone number
+    const countryCode = leadData.country ? COUNTRY_CODES[leadData.country] : '';
+    const formattedPhoneNumber = countryCode ? `${countryCode}${leadData.phoneNumber}` : leadData.phoneNumber;
+
     // Prepare form data for the tracker API
     const formData = new URLSearchParams({
       ApiKey: API_CONFIG.API_KEY,
@@ -48,7 +130,7 @@ serve(async (req) => {
       FirstName: leadData.firstName,
       LastName: leadData.lastName,
       Email: leadData.email,
-      PhoneNumber: leadData.phoneNumber,
+      PhoneNumber: formattedPhoneNumber,
       Language: API_CONFIG.LANGUAGE,
       Description: leadData.description || '',
       Note: '',
