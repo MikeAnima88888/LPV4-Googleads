@@ -85,16 +85,25 @@ serve(async (req) => {
     const responseText = await trackerResponse.text();
     console.log('Tracker API response status:', trackerResponse.status);
     console.log('Tracker API response:', responseText);
-
+    let trackerJson: any;
+    try {
+      trackerJson = JSON.parse(responseText);
+    } catch (err) {
+      trackerJson = { ret_code: trackerResponse.status, ret_message: 'Invalid JSON response' };
+    }
+    
+    const isSuccess = trackerJson.ret_code === "200" || trackerJson.ret_code === "201";
     return new Response(
       JSON.stringify({ 
-        success: true, 
-        trackerResponse: responseText,
+        success: isSuccess,
+        message: trackerJson.ret_message,
+        trackerResponse: trackerJson,
         status: trackerResponse.status,
-        submission: Object.fromEntries(formData),
-        formattedPhone: formattedPhoneNumber
+        submission: Object.fromEntries(formData)
       }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
     );
 
   } catch (error) {
