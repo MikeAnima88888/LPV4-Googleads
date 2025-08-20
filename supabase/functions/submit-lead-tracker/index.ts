@@ -111,13 +111,12 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
-  console.log('Lead data received:'+leadData);
-  try 
-  {
-    //console.log('Received request to submit lead tracker');
+
+  try {
+    console.log('Received request to submit lead tracker');
     
     const leadData: LeadData = await req.json();
-    //console.log('Lead data received:', leadData);
+    console.log('Lead data received:', leadData);
 
     // Use provided phone prefix to format phone number
     const formattedPhoneNumber = leadData.phonePrefix ? `${leadData.phonePrefix}${leadData.phoneNumber}` : leadData.phoneNumber;
