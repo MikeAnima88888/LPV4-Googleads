@@ -141,34 +141,35 @@ const LeadForm = () => {
           body: trackerData
         });
         console.log("Tracker API response:", trackerResponse);
-        if (trackerResponse.error) {
-          console.error("Tracker API error:", trackerResponse.error);
+        //if (trackerResponse.error) 
+        //{
+          //console.error("Tracker API error:", trackerResponse.error);
+        //}
+
+        if (trackerResponse.success) 
+        {
+          // 3. Success toast
+          toast({
+            title: "Consultation Request Submitted",
+            description: "Thank you for your submission. A legal professional will contact you within 24 hours.",
+          });
+      
+          // 4. Reset form
+          reset();
+      
+          // 5. Navigate after all calls are done
+          console.log("Navigating to thank-you page...");
+          navigate("/thank-you");
+        }
+        else
+        {
+          toast({
+            title: "Something went wrong!",
+            description: trackerResponse.message,
+          });  
         }
       } catch (trackerError) {
         console.error("Error submitting to tracker:", trackerError);
-      }
-
-      if (trackerResponse.success) 
-      {
-        // 3. Success toast
-        toast({
-          title: "Consultation Request Submitted",
-          description: "Thank you for your submission. A legal professional will contact you within 24 hours.",
-        });
-    
-        // 4. Reset form
-        reset();
-    
-        // 5. Navigate after all calls are done
-        console.log("Navigating to thank-you page...");
-        navigate("/thank-you");
-      }
-      else
-      {
-        toast({
-          title: "Something went wrong!",
-          description: trackerResponse.message,
-        });  
       }
   
     } catch (error) {
