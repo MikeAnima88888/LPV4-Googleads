@@ -148,7 +148,7 @@ const LeadForm = () => {
         console.error("Error submitting to tracker:", trackerError);
       }
 
-      if (data.success) 
+      if (trackerResponse.success) 
       {
         // 3. Success toast
         toast({
@@ -167,7 +167,7 @@ const LeadForm = () => {
       {
         toast({
           title: "Something went wrong!",
-          description: data.message,
+          description: trackerResponse.message,
         });  
       }
   
