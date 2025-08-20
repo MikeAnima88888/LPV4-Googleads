@@ -136,6 +136,7 @@ const LeadForm = () => {
       };
       // Submitting to tracker API (phone number will be formatted with country code by edge function)
   
+      let trackerSuccess = false;
       try {
         const trackerResponse = await supabase.functions.invoke('submit-lead-tracker', {
           body: trackerData
@@ -143,33 +144,25 @@ const LeadForm = () => {
         console.log("Tracker API response:", trackerResponse);
         if (trackerResponse.error) {
           console.error("Tracker API error:", trackerResponse.error);
+        } else if (trackerResponse.data) {
+          trackerSuccess = trackerResponse.data.success;
         }
       } catch (trackerError) {
         console.error("Error submitting to tracker:", trackerError);
       }
 
-      if (data.success) 
-      {
-        // 3. Success toast
-        toast({
-          title: "Consultation Request Submitted",
-          description: "Thank you for your submission. A legal professional will contact you within 24 hours.",
-        });
-    
-        // 4. Reset form
-        reset();
-    
-        // 5. Navigate after all calls are done
-        console.log("Navigating to thank-you page...");
-        navigate("/thank-you");
-      }
-      else
-      {
-        toast({
-          title: "Something went wrong!",
-          description: data.message,
-        });  
-      }
+      // 3. Success toast and navigation
+      toast({
+        title: "Consultation Request Submitted",
+        description: "Thank you for your submission. A legal professional will contact you within 24 hours.",
+      });
+  
+      // 4. Reset form
+      reset();
+  
+      // 5. Navigate after all calls are done
+      console.log("Navigating to thank-you page...");
+      navigate("/thank-you");
   
     } catch (error) {
       console.error("Form submission error:", error);
