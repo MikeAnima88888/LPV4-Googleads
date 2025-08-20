@@ -89,7 +89,8 @@ serve(async (req) => {
       JSON.stringify({ 
         success: true, 
         trackerResponse: responseText,
-        status: trackerResponse.status 
+        status: trackerResponse.status,
+        submission:formData
       }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
