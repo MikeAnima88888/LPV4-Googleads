@@ -18,7 +18,6 @@ interface LeadData {
   lastName: string;
   email: string;
   phoneNumber: string;
-  phonePrefix?: string;
   description: string;
   clickId?: string;
   page?: string;
@@ -118,8 +117,9 @@ serve(async (req) => {
     const leadData: LeadData = await req.json();
     console.log('Lead data received:', leadData);
 
-    // Use provided phone prefix to format phone number
-    const formattedPhoneNumber = leadData.phonePrefix ? `${leadData.phonePrefix}${leadData.phoneNumber}` : leadData.phoneNumber;
+    // Get country code prefix and format phone number
+    const countryCode = leadData.country ? COUNTRY_CODES[leadData.country] : '';
+    const formattedPhoneNumber = countryCode ? `${countryCode}${leadData.phoneNumber}` : leadData.phoneNumber;
 
     // Prepare form data for the tracker API
     const formData = new URLSearchParams({
