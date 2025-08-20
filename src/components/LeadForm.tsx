@@ -133,7 +133,7 @@ const LeadForm = () => {
         scamType: data.scamType,
         amountLost: data.amountLost,
       };
-      console.log("Submitting to tracker API:", trackerData);
+      // Submitting to tracker API (phone number will be formatted with country code by edge function)
   
       try {
         const trackerResponse = await supabase.functions.invoke('submit-lead-tracker', {
