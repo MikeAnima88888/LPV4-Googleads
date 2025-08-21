@@ -214,7 +214,7 @@ const PrivacyPolicy = () => {
               <p className="mb-4">If you have questions about this Privacy Policy or our data practices, please contact us:</p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <ul className="space-y-2">
-                  <li><strong>Email:</strong> privacy@clearchainrecovery.com</li>
+                  <li><strong>Email:</strong> privacy@clearchain.com</li>
                   <li><strong>Phone:</strong> Available during consultation</li>
                   <li><strong>Address:</strong> Legal services provided by licensed attorneys in applicable jurisdictions</li>
                 </ul>

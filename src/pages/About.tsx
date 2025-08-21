@@ -48,7 +48,7 @@ const About = () => {
               <section>
                 <h3 className="text-xl font-semibold text-white mb-3">Unveiling Excellence and Dedication</h3>
                 <p className="mb-3">
-                  Financial recovery was founded by ClearChain Recovery, Crypto Investigations, Asset Recovery and Offshore Legal Experts.
+                  CLEARCHAIN was founded by ClearChain Recovery, Crypto Investigations, Asset Recovery and Offshore Legal Experts.
                   With over 40 years of experience in these fields individually they came together to form a boutique Cyber and Crypto Intelligence Group focused on providing results.
                 </p>
                 <p>
@@ -127,13 +127,13 @@ const About = () => {
               {/* Our Mission values */}
               <section>
                 <h3 className="text-xl font-semibold text-white mb-2">Our Mission</h3>
-                <p>We are guided by the ideals of honesty, confidentiality, and openness as a corporation. We understand the sensitivity of financial fraud cases and treat each one with the utmost care. Our clients may be confident that their information and interests are secure. We take pleasure in developing long-term relationships with our clients and winning their confidence by our professionalism, experience, and constant dedication to producing great results. ClearChain Recovery considers itself a partner in the quest of justice and recovery, not merely a service provider.</p>
+                <p>We are guided by the ideals of honesty, confidentiality, and openness as a corporation. We understand the sensitivity of financial fraud cases and treat each one with the utmost care. Our clients may be confident that their information and interests are secure. We take pleasure in developing long-term relationships with our clients and winning their confidence by our professionalism, experience, and constant dedication to producing great results. CLEARCHAIN considers itself a partner in the quest of justice and recovery, not merely a service provider.</p>
               </section>
 
               {/* Philosophy */}
               <section>
                 <h3 className="text-xl font-semibold text-white mb-2">Our Philosophy</h3>
-                <p className="mb-3">We recognize the rising complexity of financial crimes in the digital age and the necessity for specific experience in countering them at ClearChain Recovery. Our team is well-versed in the complexities of:</p>
+                <p className="mb-3">We recognize the rising complexity of financial crimes in the digital age and the necessity for specific experience in countering them at CLEARCHAIN. Our team is well-versed in the complexities of:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>Cybercrime</li>
                   <li>Cryptocurrency investigations</li>

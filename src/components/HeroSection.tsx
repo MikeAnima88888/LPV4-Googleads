@@ -187,8 +187,8 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-10">
-          <span className="block">Victim of Online Fraud?</span>
-          <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
+          <span className="block">Legal Support for Victims of Online Fraud</span>
+          <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
             Get Help Today
             {/* Handwritten-style underline: tapered brush with angled tail */}
             <svg
@@ -299,7 +299,7 @@ const HeroSection = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Get Free Consultation
+              Get Free Legal Review Now
               <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
             </span>
           </Button>
@@ -311,8 +311,8 @@ const HeroSection = () => {
             className="group w-full sm:w-auto border-2 border-amber-400/60 bg-gradient-to-r from-amber-400/10 to-orange-400/10 text-black hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-400 hover:text-slate-900 px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold backdrop-blur-sm transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Learn About Your Rights
-              <div className="w-1.5 h-1.5 bg-current rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+              Check If You Have a Case
+              <div className="w-1.5 h-1.5 bg-current opacity-60 group-hover:opacity-100 transition-opacity"></div>
             </span>
           </Button>
         </div>
@@ -321,9 +321,9 @@ const HeroSection = () => {
         <div className="mb-8 max-w-3xl mx-auto">
           <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-4 border border-slate-700/30">
             <p className="text-lg text-slate-100 leading-relaxed">
-              <span className="text-white font-bold text-xl block mb-2">Elite Legal Defense Against Financial Predators</span>
+              <span className="text-white font-bold text-xl block mb-2">Licensed Legal Support to Understand Your Rights</span>
               <span className="block mb-2 text-slate-200">
-                Our specialized legal team supports victims in evaluating and pursuing potential recovery strategies in complex, cross‑border fraud matters.
+                Our specialized legal team supports victims in evaluating and exploring potential legal remedies in complex, cross‑border fraud matters.
               </span>
               <span className="block text-amber-300 font-semibold">
                 <span className="text-red-400 font-bold">Time is critical</span>
@@ -338,6 +338,13 @@ const HeroSection = () => {
           {trustIndicators.map((item, index) => (
             <TrustIndicator key={index} icon={item.icon} text={item.text} />
           ))}
+        </div>
+        
+        {/* Attorney Advertising Disclaimer */}
+        <div className="mt-4 text-center">
+          <p className="text-xs text-slate-400 leading-relaxed">
+            Attorney Advertising. Prior results do not guarantee a similar outcome.
+          </p>
         </div>
       </div>
     </section>

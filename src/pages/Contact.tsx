@@ -18,7 +18,7 @@ const Contact = () => {
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg mb-4">
             <Shield className="h-7 w-7 text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Contact CLEARCHAIN Recovery</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Contact CLEARCHAIN</h1>
           <p className="text-slate-300 max-w-2xl mx-auto">
             Confidential, no-obligation consultations with licensed legal professionals.
           </p>
@@ -83,7 +83,7 @@ const Contact = () => {
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                     <div className="text-white/90 font-semibold">Budapest, Hungary</div>
-                    <div className="text-emerald-200 text-sm">International HQ & Financial Recovery Operations Center</div>
+                    <div className="text-emerald-200 text-sm">International HQ & Legal Operations Center</div>
                     <div className="text-slate-200 text-sm">96-98 Váci Road, 1133 Budapest, Hungary</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-4">

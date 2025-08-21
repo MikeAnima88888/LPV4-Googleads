@@ -33,13 +33,13 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl lg:text-6xl font-black text-white mb-6">
-            Don't Let Scammers
-            <span className="block text-emerald-400 mt-2">Get Away With It</span>
+            Get Your Free Legal Consultation
+            <span className="block text-emerald-400 mt-2">Licensed Attorneys Available</span>
           </h2>
           
           <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-            Our licensed legal professionals have helped over 1,000 fraud victims explore their 
-            legal options. Get your free consultation today and learn about your rights.
+            Licensed attorneys will confidentially review your situation and discuss potential legal options. 
+            Get your free consultation today and learn about your rights.
           </p>
 
           {/* Statistics Recap */}
@@ -57,7 +57,7 @@ const FinalCTA = () => {
               Legal Action May Be Possible
             </p>
             <p className="text-lg text-slate-300">
-              Many fraud victims have legal options they don't know about. Our attorneys can help you understand your rights and explore potential recovery options.
+              Many fraud victims have legal options they don't know about. Our attorneys can help you understand your rights and explore potential legal remedies.
             </p>
           </div>
 
@@ -66,11 +66,11 @@ const FinalCTA = () => {
             size="lg"
             className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-12 py-6 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105"
           >
-            Get Your Free Legal Consultation Now
+            Get Your Free Case Review Now
           </Button>
 
           <p className="text-slate-400 mt-6 text-sm">
-            No obligation • Completely confidential • Licensed attorneys standing by
+            No obligation • Confidential • Services available only where attorneys are licensed
           </p>
         </div>
       </div>

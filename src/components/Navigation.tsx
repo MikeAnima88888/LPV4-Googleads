@@ -34,7 +34,7 @@ const Navigation = () => {
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center space-x-1">
                   <span className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 truncate">CLEARCHAIN</span>
-                  <span className="text-lg sm:text-xl lg:text-2xl font-light text-emerald-600 hidden xs:inline">Recovery</span>
+      
                 </div>
                 <div className="hidden sm:flex space-x-2 mt-1">
                   <span className="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full whitespace-nowrap">

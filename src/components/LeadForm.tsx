@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { DR_TRACKER_CONFIG } from "@/config/tracker.js";
 
 const formSchema = z.object({
@@ -37,6 +37,9 @@ const formSchema = z.object({
   experience: z
     .string()
     .min(10, "Please provide more details about your experience"),
+  privacyConsent: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the Privacy Policy and understand the terms"
+  }),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -494,6 +497,28 @@ const LeadForm = () => {
               </div>
               {/* Submit Section */}
               <div className="text-center space-y-6">
+                {/* Required Checkbox */}
+                <div className="flex items-start space-x-3 justify-center">
+                  <input
+                    type="checkbox"
+                    id="privacy-consent"
+                    {...register("privacyConsent")}
+                    className="mt-1 h-5 w-5 text-emerald-600 border-2 border-slate-300 rounded focus:ring-emerald-500 focus:border-emerald-500"
+                  />
+                  <label htmlFor="privacy-consent" className="text-sm text-slate-700 leading-relaxed text-left max-w-md">
+                    I agree to the{" "}
+                    <Link to="/privacy-policy" className="text-emerald-600 hover:text-emerald-700 underline underline-offset-2 font-medium">
+                      Privacy Policy
+                    </Link>{" "}
+                    and understand that submitting this form does not create an attorney-client relationship.
+                  </label>
+                </div>
+                {errors.privacyConsent && (
+                  <p className="text-red-500 text-sm">
+                    {errors.privacyConsent.message}
+                  </p>
+                )}
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -505,17 +530,20 @@ const LeadForm = () => {
                       Submitting Request...
                     </>
                   ) : (
-                    "Get Free Legal Consultation"
+                    "Get Free Case Review"
                   )}
                 </Button>
 
-                <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 sm:p-6 border-l-4 border-blue-500">
-                  <p className="text-sm text-blue-800 leading-relaxed">
-                    <strong>Legal Notice:</strong> By submitting this form, you
-                    are requesting a free consultation. This does not create an
-                    attorney-client relationship. All information will be kept
-                    strictly confidential and will only be used to assess your
-                    legal options.
+                {/* Clear Disclaimers */}
+                <div className="space-y-3 text-center">
+                  <p className="text-sm text-slate-600 font-medium">
+                    Submitting this form does not create an attorney-client relationship.
+                  </p>
+                  <p className="text-sm text-slate-600 font-medium">
+                    All consultations are confidential.
+                  </p>
+                  <p className="text-sm text-slate-600 font-medium">
+                    18+ only.
                   </p>
                 </div>
 

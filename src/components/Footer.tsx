@@ -1,6 +1,5 @@
 
 import { Shield, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,7 +20,6 @@ const Footer = () => {
               <div className="flex flex-col">
                 <div className="flex items-center space-x-1">
                   <span className="text-2xl font-black text-white">CLEARCHAIN</span>
-                  <span className="text-2xl font-light text-emerald-400">Recovery</span>
                 </div>
                 <span className="text-sm text-slate-400">Licensed Legal Services</span>
               </div>
@@ -38,6 +36,7 @@ const Footer = () => {
                 <li>United Kingdom: <a href="tel:+442037696468" className="hover:underline underline-offset-2">+44 (203)-769-6468</a></li>
                 <li>Sweden: <a href="tel:+46406829478" className="hover:underline underline-offset-2">+46 (406)-829-478</a></li>
                 <li>Australia: <a href="tel:+61289070307" className="hover:underline underline-offset-2">+61 (289)-070-307</a></li>
+                <li>Email: <a href="mailto:support@clearchain.com" className="hover:underline underline-offset-2">support@clearchain.com</a></li>
               </ul>
             </div>
           </div>
@@ -45,13 +44,13 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="mb-12">
             <nav className="flex flex-wrap gap-4 text-slate-300 text-sm">
-              <Link to="/contact" className="hover:text-white underline-offset-4 hover:underline">Contact</Link>
-              <Link to="/about" className="hover:text-white underline-offset-4 hover:underline">About</Link>
-              <Link to="/privacy-policy" className="hover:text-white underline-offset-4 hover:underline">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="hover:text-white underline-offset-4 hover:underline">Terms of Service</Link>
-              <Link to="/cookie-policy" className="hover:text-white underline-offset-4 hover:underline">Cookie Policy</Link>
-              <Link to="/legal-disclaimer" className="hover:text-white underline-offset-4 hover:underline">Legal Disclaimer</Link>
-              <Link to="/accessibility" className="hover:text-white underline-offset-4 hover:underline">Accessibility</Link>
+              <a href="/contact" className="hover:text-white underline-offset-4 hover:underline">Contact</a>
+              <a href="/about" className="hover:text-white underline-offset-4 hover:underline">About</a>
+              <a href="/privacy-policy" className="hover:text-white underline-offset-4 hover:underline">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-white underline-offset-4 hover:underline">Terms of Service</a>
+              <a href="/cookie-policy" className="hover:text-white underline-offset-4 hover:underline">Cookie Policy</a>
+              <a href="/legal-disclaimer" className="hover:text-white underline-offset-4 hover:underline">Legal Disclaimer</a>
+              <a href="/accessibility" className="hover:text-white underline-offset-4 hover:underline">Accessibility</a>
             </nav>
           </div>
 
@@ -60,41 +59,22 @@ const Footer = () => {
             <div className="bg-slate-800 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-white mb-6">Important Legal Notices</h3>
               
-              <div className="grid md:grid-cols-2 gap-8 text-sm text-slate-300 leading-relaxed">
-                <div>
-                  <h4 className="font-semibold text-white mb-3">Attorney Advertising</h4>
-                  <p className="mb-4">
-                    This website constitutes attorney advertising. Prior results do not guarantee 
-                    a similar outcome. The information on this website is for general information 
-                    purposes only and is not intended to be legal advice.
-                  </p>
-                  
-                  <h4 className="font-semibold text-white mb-3">No Attorney-Client Relationship</h4>
-                  <p>
-                    Contacting CLEARCHAIN Recovery through this website does not create an 
-                    attorney-client relationship. Confidential or time-sensitive information 
-                    should not be sent through this form.
-                  </p>
-                </div>
+              <div className="text-sm text-slate-300 leading-relaxed space-y-4">
+                <p className="font-semibold text-white">
+                  Attorney Advertising. Prior results do not guarantee a similar outcome.
+                </p>
                 
-                <div>
-                  <h4 className="font-semibold text-white mb-3">Licensed Professionals</h4>
-                  <p className="mb-4">
-                    CLEARCHAIN Recovery works with licensed attorneys who are authorized to 
-                    practice law in their respective jurisdictions. Not all attorneys are 
-                    licensed in all states.
-                  </p>
-                  
-                  <h4 className="font-semibold text-white mb-3">Consultation Disclaimer</h4>
-                  <p>
-                    A free consultation does not guarantee that we will take your case. 
-                    Each case is evaluated on its individual merits. Legal representation 
-                    may not be appropriate for all situations.
-                  </p>
-                  <p className="mt-3 text-slate-400 text-xs">
-                    Services are intended for adults (18+) only. We follow applicable legal advertising regulations.
-                  </p>
-                </div>
+                <p>
+                  No attorney-client relationship is formed by contacting us through this website.
+                </p>
+                
+                <p>
+                  Services are available only where attorneys are licensed to practice.
+                </p>
+                
+                <p className="text-xs text-slate-400 mt-4">
+                  Services are intended for adults (18+) only. We follow applicable legal advertising regulations.
+                </p>
               </div>
             </div>
 
@@ -117,9 +97,9 @@ const Footer = () => {
                 </p>
                 
                 <p>
-                  <strong className="text-white">Recovery Limitations:</strong> While we assist 
-                  clients in exploring legal options for recovery, we cannot guarantee successful 
-                  recovery of lost funds. The ability to recover assets depends on many factors 
+                  <strong className="text-white">Legal Limitations:</strong> While we assist 
+                  clients in exploring legal options, we cannot guarantee successful 
+                  outcomes. The ability to pursue legal remedies depends on many factors 
                   beyond our control, including the location and availability of assets.
                 </p>
               </div>
@@ -130,19 +110,19 @@ const Footer = () => {
               
               <div className="text-sm text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  CLEARCHAIN Recovery is committed to ethical legal practices and consumer protection. 
+                  CLEARCHAIN is committed to ethical legal practices and consumer protection. 
                   We provide transparent information about legal options and work with licensed 
                   attorneys who adhere to professional standards of conduct.
                 </p>
                 
                 <p>
                   <strong className="text-white">Warning:</strong> Be cautious of companies that 
-                  guarantee fund recovery or charge upfront fees for recovery services. Legitimate 
+                  guarantee outcomes or charge upfront fees for legal services. Legitimate 
                   legal services should be transparent about their fee structure and limitations.
                 </p>
                 
                 <p className="text-xs text-slate-400 border-t border-slate-600 pt-4 mt-6">
-                  © {new Date().getFullYear()} CLEARCHAIN Recovery. This website and its content are protected by copyright law. 
+                  © {new Date().getFullYear()} CLEARCHAIN. This website and its content are protected by copyright law. 
                   All rights reserved. Unauthorized reproduction or distribution is prohibited.
                 </p>
               </div>

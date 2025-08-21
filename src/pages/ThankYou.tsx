@@ -116,7 +116,7 @@ const ThankYou = () => {
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 border-l-4 border-blue-500 mb-8">
               <h3 className="font-semibold text-blue-900 mb-2">Important Notice</h3>
               <p className="text-blue-800 text-sm leading-relaxed">
-                <strong>Confidentiality Guaranteed:</strong> All information you've provided is strictly confidential and protected by attorney-client privilege. 
+                <strong>Confidentiality Assured:</strong> All information you've provided is strictly confidential and protected by attorney-client privilege. 
                 Your consultation is completely free with no obligation to proceed.
               </p>
             </div>

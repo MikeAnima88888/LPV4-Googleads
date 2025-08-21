@@ -24,9 +24,9 @@ const ServicesSection = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: "Investment Fraud Legal Representation",
-      description: "Legal assistance for victims of fraudulent investment schemes, binary options, and fake trading platforms.",
-      highlight: "Recover Lost Investments",
+      title: "Investment Fraud Legal Consultation",
+      description: "Confidential legal consultation for individuals affected by investment fraud, including fraudulent schemes, binary options, and fake trading platforms.",
+      highlight: "Learn About Legal Options",
       theme: "emerald",
       iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
       cardBg: "bg-gradient-to-br from-emerald-50 to-emerald-100",
@@ -34,9 +34,9 @@ const ServicesSection = () => {
     },
     {
       icon: Shield,
-      title: "Cryptocurrency Asset Legal Services",
-      description: "Specialized legal support for cryptocurrency fraud, including recovery of stolen digital assets and platform failures.",
-      highlight: "Crypto Recovery Experts",
+      title: "Cryptocurrency Fraud Legal Support",
+      description: "Specialized legal support for assessing potential remedies in cryptocurrency-related fraud, including platform failures.",
+      highlight: "Learn About Legal Options",
       theme: "blue",
       iconBg: "bg-gradient-to-br from-blue-500 to-blue-600",
       cardBg: "bg-gradient-to-br from-blue-50 to-blue-100",
@@ -45,8 +45,8 @@ const ServicesSection = () => {
     {
       icon: Heart,
       title: "Romance Scam Legal Support",
-      description: "Compassionate legal assistance for victims of romance scams and dating app fraud schemes.",
-      highlight: "Confidential Support",
+      description: "Compassionate legal guidance for victims of romance scams and dating-app fraud.",
+      highlight: "Learn About Legal Options",
       theme: "rose",
       iconBg: "bg-gradient-to-br from-rose-500 to-rose-600",
       cardBg: "bg-gradient-to-br from-rose-50 to-rose-100",
@@ -55,8 +55,8 @@ const ServicesSection = () => {
     {
       icon: AlertTriangle,
       title: "Consumer Protection Legal Services",
-      description: "Comprehensive legal protection for online shopping fraud, tech support scams, and other consumer fraud.",
-      highlight: "Full Legal Protection",
+      description: "Legal guidance regarding online shopping fraud, tech-support scams, and other consumer fraud matters.",
+      highlight: "Learn About Legal Options",
       theme: "amber",
       iconBg: "bg-gradient-to-br from-amber-500 to-amber-600",
       cardBg: "bg-gradient-to-br from-amber-50 to-amber-100",
@@ -73,7 +73,7 @@ const ServicesSection = () => {
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Our licensed legal professionals specialize in helping victims of online fraud 
-            explore their legal options and pursue compensation.
+            explore their legal options and understand potential legal remedies.
           </p>
         </div>
 

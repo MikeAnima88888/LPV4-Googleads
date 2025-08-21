@@ -9,13 +9,13 @@ const TestimonialsSection = () => {
     {
       name: "M. Thompson",
       location: "New York",
-      text: "CLEARCHAIN Recovery helped me understand my legal options after losing $50,000 to a cryptocurrency scam. Their professional approach and expertise gave me hope when I thought all was lost.",
+      text: "CLEARCHAIN helped me understand my legal options after a cryptocurrency scam. Their professionalism and clarity made a difficult process easier to navigate.",
       rating: 5
     },
     {
       name: "D. Chen",
       location: "San Francisco",
-      text: "The legal team at CLEARCHAIN provided exceptional guidance through my investment fraud case. They were responsive, knowledgeable, and truly cared about getting results.",
+      text: "The legal team at CLEARCHAIN provided exceptional guidance through my investment fraud case. They were responsive, knowledgeable, and truly cared about providing professional guidance.",
       rating: 5
     },
     {
@@ -124,6 +124,13 @@ const TestimonialsSection = () => {
             </div>
             <div className="text-sm text-slate-600">Support Available</div>
           </div>
+        </div>
+        
+        {/* Stats Footnote */}
+        <div className="text-center mt-6">
+          <p className="text-xs text-slate-500 leading-relaxed">
+            *Ratings and experience reflect the attorneys we work with. Services available only where licensed.
+          </p>
         </div>
       </div>
     </section>
