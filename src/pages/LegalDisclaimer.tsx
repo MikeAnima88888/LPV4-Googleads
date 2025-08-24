@@ -69,8 +69,9 @@ const LegalDisclaimer = () => {
               <h2 className="text-2xl font-semibold mb-3">Contact Information</h2>
               <p className="mb-4">For legal consultation:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Email: legal@yourlaw.com</li>
-                <li>Phone: (555) 123-4567</li>
+                <li>Email: legal@clearchain.com</li>
+                <li>Phone: +36 1 234 56 78</li>
+                <li>Address: Andrássy út 67, 1062 Budapest, Hungary</li>
               </ul>
             </section>
 

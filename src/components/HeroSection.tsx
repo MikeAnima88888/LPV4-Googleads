@@ -181,15 +181,24 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-slate-900/70" />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-3 py-3 text-center max-w-5xl mt-10">
-        {/* Free Consultation Callout */}
+             {/* Content */}
+       <div className="relative z-10 container mx-auto px-3 py-3 text-center max-w-5xl mt-10">
+         {/* Attorney Advertising Disclaimer */}
+         <div className="mb-6 p-4 bg-amber-50 border-2 border-amber-200 rounded-xl">
+           <p className="text-amber-800 text-sm font-medium">
+             ⚠️ <strong>ATTORNEY ADVERTISING</strong><br />
+             This website is attorney advertising. Prior results do not guarantee similar outcomes. 
+             Consultation does not create an attorney-client relationship.
+           </p>
+         </div>
+         
+         {/* Free Consultation Callout */}
 
         {/* Main Headline */}
         <h1 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-10">
-          <span className="block">Legal Support for Victims of Online Fraud</span>
-          <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
-            Get Help Today
+          <span className="block">Legal Consultation for Online Fraud Victims</span>
+                    <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
+            Get Legal Consultation
             {/* Handwritten-style underline: tapered brush with angled tail */}
             <svg
               aria-hidden
@@ -298,23 +307,23 @@ const HeroSection = () => {
             className="group w-full sm:w-auto bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 hover:from-emerald-600 hover:via-emerald-700 hover:to-emerald-800 text-white px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 border border-emerald-400/20 backdrop-blur-sm relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Get Free Legal Review Now
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            </span>
+                         <span className="relative z-10 flex items-center justify-center gap-2">
+               Schedule Free Consultation
+               <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+             </span>
           </Button>
           
-          <Button 
-            onClick={scrollToForm}
-            size="lg"
-            variant="outline"
-            className="group w-full sm:w-auto border-2 border-amber-400/60 bg-gradient-to-r from-amber-400/10 to-orange-400/10 text-black hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-400 hover:text-slate-900 px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold backdrop-blur-sm transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Check If You Have a Case
-              <div className="w-1.5 h-1.5 bg-current opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            </span>
-          </Button>
+                     <Button 
+             onClick={scrollToForm}
+             size="lg"
+             variant="outline"
+             className="group w-full sm:w-auto border-2 border-amber-400/60 bg-gradient-to-r from-amber-400/10 to-orange-400/10 text-black hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-400 hover:text-slate-900 px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold backdrop-blur-sm transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
+           >
+             <span className="relative z-10 flex items-center justify-center gap-2">
+               Schedule Legal Consultation
+               <div className="w-1.5 h-1.5 bg-current opacity-60 group-hover:opacity-100 transition-opacity"></div>
+             </span>
+           </Button>
         </div>
 
         {/* Enhanced Professional Subheading - moved here */}

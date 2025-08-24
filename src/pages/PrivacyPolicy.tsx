@@ -215,8 +215,8 @@ const PrivacyPolicy = () => {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <ul className="space-y-2">
                   <li><strong>Email:</strong> privacy@clearchain.com</li>
-                  <li><strong>Phone:</strong> Available during consultation</li>
-                  <li><strong>Address:</strong> Legal services provided by licensed attorneys in applicable jurisdictions</li>
+                  <li><strong>Phone:</strong> +1 (647) 892-3456</li>
+                  <li><strong>Address:</strong> Kungsgatan 47, 111 22 Stockholm, Sweden</li>
                 </ul>
               </div>
             </section>

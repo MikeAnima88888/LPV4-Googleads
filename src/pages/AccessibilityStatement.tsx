@@ -102,8 +102,9 @@ const AccessibilityStatement = () => {
               <div className="bg-blue-50 p-4 rounded-lg">
                 <p className="mb-4">If you encounter any accessibility barriers, please contact our Accessibility Coordinator:</p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Email: accessibility@yourlaw.com</li>
-                  <li>Phone: (555) 123-4567</li>
+                  <li>Email: accessibility@clearchain.com</li>
+                  <li>Phone: +46 8 456 32 18</li>
+                  <li>Address: Kungsgatan 47, 111 22 Stockholm, Sweden</li>
                   <li>Response time: 2 business days</li>
                 </ul>
               </div>

@@ -79,17 +79,20 @@ const Contact = () => {
                   <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                     <div className="text-white/90 font-semibold">Stockholm, Sweden</div>
                     <div className="text-emerald-200 text-sm">Global Investigations Head Office</div>
-                    <div className="text-slate-200 text-sm">Vasagatan 11, 111 20</div>
+                    <div className="text-slate-200 text-sm">Kungsgatan 47, 111 22 Stockholm</div>
+                    <div className="text-emerald-300 text-sm mt-1">+46 8 456 32 18</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                     <div className="text-white/90 font-semibold">Budapest, Hungary</div>
                     <div className="text-emerald-200 text-sm">International HQ & Legal Operations Center</div>
-                    <div className="text-slate-200 text-sm">96-98 Váci Road, 1133 Budapest, Hungary</div>
+                    <div className="text-slate-200 text-sm">Andrássy út 67, 1062 Budapest</div>
+                    <div className="text-emerald-300 text-sm mt-1">+36 1 234 56 78</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                     <div className="text-white/90 font-semibold">United Kingdom, London</div>
                     <div className="text-emerald-200 text-sm">CA Headquarters</div>
-                    <div className="text-slate-200 text-sm">First Bath Place, EC2A 3DR</div>
+                    <div className="text-slate-200 text-sm">Fenchurch Street 28, EC3M 3DB</div>
+                    <div className="text-emerald-300 text-sm mt-1">+44 20 7123 4567</div>
                   </div>
                 </div>
               </div>

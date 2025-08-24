@@ -82,7 +82,7 @@ const LeadForm = () => {
     "Online Shopping Fraud",
     "Binary Options Fraud",
     "Forex Trading Scam",
-    "Fake Recovery Services",
+    "Investment Fraud Schemes",
     "Other",
   ];
 
@@ -225,6 +225,12 @@ const LeadForm = () => {
                 Speak with a licensed attorney about your legal options.
                 Completely confidential.
               </p>
+              <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                <p className="text-amber-800 text-sm font-medium">
+                  📋 <strong>IMPORTANT:</strong> This consultation is for informational purposes only and does not create an attorney-client relationship. 
+                  We cannot guarantee specific outcomes or results.
+                </p>
+              </div>
               <div className="mt-3 flex justify-center">
                 <span className="px-2.5 py-1 bg-slate-900/5 text-slate-700 text-xs font-semibold rounded-full border border-slate-200">
                   18+ Only
@@ -506,7 +512,7 @@ const LeadForm = () => {
                     className="mt-1 h-5 w-5 text-emerald-600 border-2 border-slate-300 rounded focus:ring-emerald-500 focus:border-emerald-500"
                   />
                   <label htmlFor="privacy-consent" className="text-sm text-slate-700 leading-relaxed text-left max-w-md">
-                    I agree to the{" "}
+                    I understand this is a consultation request only, not legal representation. I agree to the{" "}
                     <Link to="/privacy-policy" className="text-emerald-600 hover:text-emerald-700 underline underline-offset-2 font-medium">
                       Privacy Policy
                     </Link>{" "}
@@ -530,7 +536,7 @@ const LeadForm = () => {
                       Submitting Request...
                     </>
                   ) : (
-                    "Get Free Case Review"
+                    "Get Free Legal Consultation"
                   )}
                 </Button>
 

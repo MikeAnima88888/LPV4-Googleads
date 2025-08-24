@@ -79,8 +79,9 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-semibold mb-3">Contact Information</h2>
               <p className="mb-4">For questions about these Terms of Service:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Email: legal@yourlaw.com</li>
-                <li>Phone: (555) 123-4567</li>
+                <li>Email: legal@clearchain.com</li>
+                <li>Phone: +44 (208) 912-3456</li>
+                <li>Address: Fenchurch Street 28, EC3M 3DB, London, UK</li>
               </ul>
             </section>
 

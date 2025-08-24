@@ -25,7 +25,7 @@ const ServicesSection = () => {
     {
       icon: TrendingUp,
       title: "Investment Fraud Legal Consultation",
-      description: "Confidential legal consultation for individuals affected by investment fraud, including fraudulent schemes, binary options, and fake trading platforms.",
+      description: "Legal consultation to help you understand your legal rights and options regarding investment fraud, including fraudulent schemes, binary options, and fake trading platforms.",
       highlight: "Learn About Legal Options",
       theme: "emerald",
       iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
@@ -35,7 +35,7 @@ const ServicesSection = () => {
     {
       icon: Shield,
       title: "Cryptocurrency Fraud Legal Support",
-      description: "Specialized legal support for assessing potential remedies in cryptocurrency-related fraud, including platform failures.",
+      description: "Legal consultation to help you understand your rights and explore available legal options in cryptocurrency fraud cases, including platform failures.",
       highlight: "Learn About Legal Options",
       theme: "blue",
       iconBg: "bg-gradient-to-br from-blue-500 to-blue-600",
@@ -69,11 +69,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">
-            Legal Services for Fraud Victims
+            Legal Consultation Services for Fraud Victims
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Our licensed legal professionals specialize in helping victims of online fraud 
-            explore their legal options and understand potential legal remedies.
+            understand their legal rights and explore available legal options.
           </p>
         </div>
 

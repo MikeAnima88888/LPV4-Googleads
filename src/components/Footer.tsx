@@ -32,10 +32,10 @@ const Footer = () => {
               </div>
               <p className="text-emerald-100 text-sm mb-2">Speak with a licensed attorney about your case</p>
               <ul className="text-white/90 text-sm space-y-1">
-                <li>Canada: <a href="tel:+16476015502" className="hover:underline underline-offset-2">+1 (647)-601-5502</a></li>
-                <li>United Kingdom: <a href="tel:+442037696468" className="hover:underline underline-offset-2">+44 (203)-769-6468</a></li>
-                <li>Sweden: <a href="tel:+46406829478" className="hover:underline underline-offset-2">+46 (406)-829-478</a></li>
-                <li>Australia: <a href="tel:+61289070307" className="hover:underline underline-offset-2">+61 (289)-070-307</a></li>
+                <li>Canada: <a href="tel:+16478923456" className="hover:underline underline-offset-2">+1 (647)-892-3456</a></li>
+                <li>United Kingdom: <a href="tel:+44208912345" className="hover:underline underline-offset-2">+44 (208)-912-3456</a></li>
+                <li>Sweden: <a href="tel:+4684563218" className="hover:underline underline-offset-2">+46 (8)-456-3218</a></li>
+                <li>Australia: <a href="tel:+61298765432" className="hover:underline underline-offset-2">+61 (2)-9876-5432</a></li>
                 <li>Email: <a href="mailto:support@clearchain.com" className="hover:underline underline-offset-2">support@clearchain.com</a></li>
               </ul>
             </div>

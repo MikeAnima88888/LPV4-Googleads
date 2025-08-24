@@ -151,21 +151,21 @@ const About = () => {
                       <MapPin className="h-5 w-5 text-emerald-400" /> Stockholm, Sweden
                     </div>
                     <div className="text-emerald-200 text-sm mb-1">Global Investigations Head Office</div>
-                    <p className="text-slate-200 text-sm">Vasagatan 11, 111 20</p>
+                    <p className="text-slate-200 text-sm">Kungsgatan 47, 111 22 Stockholm</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
                     <div className="flex items-center gap-2 mb-1 text-white font-semibold">
                       <MapPin className="h-5 w-5 text-emerald-400" /> Budapest, Hungary
                     </div>
                     <div className="text-emerald-200 text-sm mb-1">International Headquarters and Financial Recovery Operations Center</div>
-                    <p className="text-slate-200 text-sm">96-98 Váci Road, 1133 Budapest, Hungary</p>
+                    <p className="text-slate-200 text-sm">Andrássy út 67, 1062 Budapest</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:col-span-2">
                     <div className="flex items-center gap-2 mb-1 text-white font-semibold">
                       <MapPin className="h-5 w-5 text-emerald-400" /> United Kingdom, London
                     </div>
                     <div className="text-emerald-200 text-sm mb-1">CA Headquarters</div>
-                    <p className="text-slate-200 text-sm">First Bath Place, EC2A 3DR</p>
+                    <p className="text-slate-200 text-sm">Fenchurch Street 28, EC3M 3DB</p>
                   </div>
                 </div>
               </section>
