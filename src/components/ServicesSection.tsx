@@ -24,9 +24,9 @@ const ServicesSection = () => {
   const services = [
     {
       icon: TrendingUp,
-      title: "Investment Fraud Legal Consultation",
-      description: "Legal consultation to help you understand your legal rights and options regarding investment fraud, including fraudulent schemes, binary options, and fake trading platforms.",
-      highlight: "Learn About Legal Options",
+      title: "Investment Scam Consultation",
+      description: "Consultation to help you understand your options regarding investment scams, including fraudulent schemes and fake trading platforms.",
+      highlight: "Learn About Options",
       theme: "emerald",
       iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
       cardBg: "bg-gradient-to-br from-emerald-50 to-emerald-100",
@@ -34,9 +34,9 @@ const ServicesSection = () => {
     },
     {
       icon: Shield,
-      title: "Cryptocurrency Fraud Legal Support",
-      description: "Legal consultation to help you understand your rights and explore available legal options in cryptocurrency fraud cases, including platform failures.",
-      highlight: "Learn About Legal Options",
+      title: "Cryptocurrency Scam Consultation",
+      description: "Consultation to help you understand your options in cryptocurrency scam cases, including platform failures.",
+      highlight: "Learn About Options",
       theme: "blue",
       iconBg: "bg-gradient-to-br from-blue-500 to-blue-600",
       cardBg: "bg-gradient-to-br from-blue-50 to-blue-100",
@@ -44,9 +44,9 @@ const ServicesSection = () => {
     },
     {
       icon: Heart,
-      title: "Romance Scam Legal Support",
-      description: "Compassionate legal guidance for victims of romance scams and dating-app fraud.",
-      highlight: "Learn About Legal Options",
+      title: "Romance Scam Consultation",
+      description: "Compassionate guidance for people affected by romance scams and dating-app fraud.",
+      highlight: "Learn About Options",
       theme: "rose",
       iconBg: "bg-gradient-to-br from-rose-500 to-rose-600",
       cardBg: "bg-gradient-to-br from-rose-50 to-rose-100",
@@ -54,9 +54,9 @@ const ServicesSection = () => {
     },
     {
       icon: AlertTriangle,
-      title: "Consumer Protection Legal Services",
-      description: "Legal guidance regarding online shopping fraud, tech-support scams, and other consumer fraud matters.",
-      highlight: "Learn About Legal Options",
+      title: "Consumer Protection Consultation",
+      description: "Guidance regarding online shopping scams, tech-support scams, and other consumer scam matters.",
+      highlight: "Learn About Options",
       theme: "amber",
       iconBg: "bg-gradient-to-br from-amber-500 to-amber-600",
       cardBg: "bg-gradient-to-br from-amber-50 to-amber-100",
@@ -69,11 +69,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">
-            Legal Consultation Services for Fraud Victims
+            Consultation Services for Scam Victims
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Our licensed legal professionals specialize in helping victims of online fraud 
-            understand their legal rights and explore available legal options.
+            Our team specializes in helping people affected by online scams 
+            understand their options and explore available resources.
           </p>
         </div>
 

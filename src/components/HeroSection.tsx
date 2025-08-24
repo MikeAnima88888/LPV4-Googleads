@@ -9,9 +9,9 @@ const VIDEO_POSTER = 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?
 
 // Memoized trust indicators to prevent re-renders
 const TrustIndicator = memo(({ icon: Icon, text }: { icon: any, text: string }) => (
-  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-all duration-200">
-    <Icon className="h-6 w-6 text-emerald-400 mx-auto mb-2" />
-    <p className="text-white font-medium text-sm leading-tight">{text}</p>
+  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 text-center hover:bg-white/20 transition-all duration-200">
+    <Icon className="h-5 w-5 md:h-6 md:w-6 text-emerald-400 mx-auto mb-2" />
+    <p className="text-white font-medium text-xs md:text-sm leading-tight">{text}</p>
   </div>
 ));
 
@@ -163,10 +163,10 @@ const HeroSection = () => {
 
   // Memoize trust indicators to prevent re-creation
   const trustIndicators = useMemo(() => [
-    { icon: CheckCircle, text: "Licensed Legal Professionals" },
+    { icon: CheckCircle, text: "Professional Consultation Team" },
     { icon: Lock, text: "Confidential Consultation" },
     { icon: Clock, text: "24hr Response Time" },
-    { icon: Award, text: "15+ Years Experience" }
+    { icon: Award, text: "Experienced Team" }
   ], []);
 
   return (
@@ -181,8 +181,8 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-slate-900/70" />
 
-             {/* Content */}
-       <div className="relative z-10 container mx-auto px-3 py-3 text-center max-w-5xl mt-10">
+                    {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-3 py-3 text-center max-w-5xl mt-8 sm:mt-10">
          {/* Attorney Advertising Disclaimer */}
          <div className="mb-6 p-4 bg-amber-50 border-2 border-amber-200 rounded-xl">
            <p className="text-amber-800 text-sm font-medium">
@@ -194,11 +194,11 @@ const HeroSection = () => {
          
          {/* Free Consultation Callout */}
 
-        {/* Main Headline */}
-        <h1 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-10">
-          <span className="block">Legal Consultation for Online Fraud Victims</span>
-                    <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
-            Get Expert Legal Help
+                 {/* Main Headline */}
+         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-8 md:mb-10">
+                       <span className="block mb-2 md:mb-3">Consultation for Online Scam Victims</span>
+                       <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.1em] md:text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
+              Get Expert Consultation
             {/* Handwritten-style underline: tapered brush with angled tail */}
             <svg
               aria-hidden
@@ -234,8 +234,8 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        {/* Optimized Video Section with Auto-play */}
-        <div className="mb-6 w-[90%] md:w-[75%] mx-auto">
+                 {/* Optimized Video Section with Auto-play */}
+         <div className="mb-6 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[75%] mx-auto">
           <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden mx-auto max-w-4xl">
             <div className="relative w-full aspect-video">
               {/* Video element with auto-play muted */}
@@ -299,13 +299,13 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col gap-4 justify-center mb-6">
-          <Button 
-            onClick={scrollToForm}
-            size="lg"
-            className="group w-full sm:w-auto bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 hover:from-emerald-600 hover:via-emerald-700 hover:to-emerald-800 text-white px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 border border-emerald-400/20 backdrop-blur-sm relative overflow-hidden"
-          >
+                 {/* Enhanced CTA Buttons */}
+         <div className="flex flex-col gap-3 mb-6 px-4 sm:px-0">
+                     <Button 
+             onClick={scrollToForm}
+             size="lg"
+             className="group w-full bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 hover:from-emerald-600 hover:via-emerald-700 hover:to-emerald-800 text-white px-8 py-5 rounded-2xl text-lg font-bold shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 border border-emerald-400/20 backdrop-blur-sm relative overflow-hidden"
+           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                          <span className="relative z-10 flex items-center justify-center gap-2">
                Schedule Free Consultation
@@ -313,37 +313,35 @@ const HeroSection = () => {
              </span>
           </Button>
           
-                     <Button 
-             onClick={scrollToForm}
-             size="lg"
-             variant="outline"
-             className="group w-full sm:w-auto border-2 border-amber-400/60 bg-gradient-to-r from-amber-400/10 to-orange-400/10 text-black hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-400 hover:text-slate-900 px-12 py-6 sm:px-10 sm:py-5 rounded-2xl text-xl sm:text-lg font-bold backdrop-blur-sm transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
-           >
-             <span className="relative z-10 flex items-center justify-center gap-2">
-               Schedule Legal Consultation
-               <div className="w-1.5 h-1.5 bg-current opacity-60 group-hover:opacity-100 transition-opacity"></div>
-             </span>
+                                           <Button 
+              onClick={scrollToForm}
+              size="lg"
+              variant="outline"
+                             className="group w-full border-2 border-amber-400/60 bg-gradient-to-r from-amber-400/10 to-orange-400/10 text-black hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-400 hover:text-slate-900 px-8 py-5 rounded-2xl text-lg font-bold backdrop-blur-sm transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-1 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
+            >
+                           <span className="relative z-10 flex items-center justify-center gap-2">
+                Get Legal Support Now
+                <div className="w-1.5 h-1.5 bg-current opacity-60 group-hover:opacity-100 transition-opacity"></div>
+              </span>
            </Button>
         </div>
 
-        {/* Enhanced Professional Subheading - moved here */}
-        <div className="mb-8 max-w-3xl mx-auto">
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-4 border border-slate-700/30">
-            <p className="text-lg text-slate-100 leading-relaxed">
-              <span className="text-white font-bold text-xl block mb-2">Licensed Legal Support to Understand Your Rights</span>
-              <span className="block mb-2 text-slate-200">
-                Our specialized legal team supports victims in evaluating and exploring potential legal remedies in complex, cross‑border fraud matters.
-              </span>
-              <span className="block text-amber-300 font-semibold">
-                <span className="text-red-400 font-bold">Time is critical</span>
-              </span>
-              <span className="block mt-2 text-xs text-slate-400">Prior results do not guarantee a similar outcome.</span>
-            </p>
-          </div>
-        </div>
+                 {/* Enhanced Professional Subheading - moved here */}
+         <div className="mb-6 md:mb-8 max-w-4xl mx-auto px-4 sm:px-0">
+           <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-slate-700/30">
+             <p className="text-base md:text-lg text-slate-100 leading-relaxed">
+               <span className="text-white font-bold text-lg md:text-xl block mb-2 md:mb-3">Professional Support to Understand Your Options</span>
+               <span className="block mb-2 md:mb-3 text-slate-200">
+                 Our specialized team supports people affected by scams in evaluating and exploring potential options in complex, cross‑border scam matters.
+               </span>
+               
+               <span className="block mt-2 text-xs text-slate-400">Prior results do not guarantee a similar outcome.</span>
+             </p>
+           </div>
+         </div>
 
-        {/* Trust Indicators */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                 {/* Trust Indicators */}
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto px-4 sm:px-0">
           {trustIndicators.map((item, index) => (
             <TrustIndicator key={index} icon={item.icon} text={item.text} />
           ))}

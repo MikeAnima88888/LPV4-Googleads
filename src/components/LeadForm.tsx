@@ -75,14 +75,13 @@ const LeadForm = () => {
   ];
 
   const scamTypes = [
-    "Investment/Trading Platform Fraud",
+    "Investment/Trading Platform Scam",
     "Cryptocurrency Scam",
     "Romance Scam",
     "Tech Support Scam",
-    "Online Shopping Fraud",
-    "Binary Options Fraud",
-    "Forex Trading Scam",
-    "Investment Fraud Schemes",
+    "Online Shopping Scam",
+    "Trading Platform Scam",
+    "Investment Scam",
     "Other",
   ];
 
@@ -108,7 +107,7 @@ const LeadForm = () => {
           country: data.country,
           phone: data.phone,
           phone_prefix: selectedCountryData?.prefix || "+1",
-          fraud_type: data.scamType,
+          scam_type: data.scamType,
           amount_lost: data.amountLost,
           story: data.experience,
           Domain: currentDomain,
