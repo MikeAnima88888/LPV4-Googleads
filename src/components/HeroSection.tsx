@@ -198,7 +198,7 @@ const HeroSection = () => {
         <h1 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-10">
           <span className="block">Legal Consultation for Online Fraud Victims</span>
                     <span className="relative inline-block mt-2 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)] text-[1.15em] font-['Poppins'] font-extrabold tracking-wide">
-            Get Legal Consultation
+            Get Expert Legal Help
             {/* Handwritten-style underline: tapered brush with angled tail */}
             <svg
               aria-hidden
